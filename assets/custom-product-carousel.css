@@ -1,0 +1,69 @@
+.custom-product-carousel {
+  margin: 0 auto;
+  max-width: var(--page-width);
+  padding: 0 1.5rem;
+}
+
+.product-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-carousel-container {
+  display: flex;
+  gap: 2rem;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0;
+}
+
+.product-card {
+  flex: 0 0 calc(100% / var(--desktop-columns, 4) - 2rem);
+  position: relative;
+  border-radius: 8px;
+  background: var(--gradient-background);
+  transition: transform 0.3s ease;
+}
+
+.card-content {
+  position: relative;
+  padding: 1rem;
+}
+
+.card-info {
+  margin-top: 1rem;
+}
+
+.flyout-box {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid rgba(var(--color-foreground), 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  z-index: 5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover .flyout-box {
+  display: block;
+}
+
+@media screen and (max-width: 749px) {
+  .product-card {
+    flex: 0 0 calc(100% - 2rem);
+  }
+  
+  .flyout-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+  }
+} 

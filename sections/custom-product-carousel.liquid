@@ -1,0 +1,270 @@
+{%- liquid
+  assign show_flyout = section.settings.show_flyout
+  assign enable_quick_view = section.settings.enable_quick_view
+  assign show_secondary_image = section.settings.show_secondary_image
+  assign image_ratio = section.settings.image_ratio | default: 'square'
+  assign columns_desktop = section.settings.columns_desktop | default: 4
+  assign columns_mobile = section.settings.columns_mobile | default: 2
+  assign show_vendor = section.settings.show_vendor
+  assign padding_top = section.settings.padding_top | times: 0.75 | round: 0
+  assign padding_bottom = section.settings.padding_bottom | times: 0.75 | round: 0
+  assign text_font = section.settings.text_font_family
+  assign text_color = section.settings.text_color
+  assign background_color = section.settings.background_color
+  assign show_rating = section.settings.show_rating
+  assign enable_quick_add = section.settings.enable_quick_add
+  assign show_secondary_image = section.settings.show_secondary_image
+  assign show_swatches = section.settings.show_swatches
+  assign show_badges = section.settings.show_badges
+  assign show_price = section.settings.show_price
+  assign show_compare_at_price = section.settings.show_compare_at_price
+  assign show_vendor = section.settings.show_vendor
+  assign show_button = section.settings.show_button
+  assign button_style = section.settings.button_style
+  assign button_label = section.settings.button_label
+  assign button_padding = section.settings.button_padding
+  assign button_corner_radius = section.settings.button_corner_radius
+  assign button_border_width = section.settings.button_border_width
+  assign button_border_opacity = section.settings.button_border_opacity
+  assign button_background_opacity = section.settings.button_background_opacity
+  assign button_text_style = section.settings.button_text_style
+  assign button_shadow_opacity = section.settings.button_shadow_opacity
+  assign button_shadow_horizontal_offset = section.settings.button_shadow_horizontal_offset
+  assign button_shadow_vertical_offset = section.settings.button_shadow_vertical_offset
+  assign button_shadow_blur = section.settings.button_shadow_blur
+-%}
+
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'custom-product-carousel.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ padding_top }}px;
+    padding-bottom: {{ padding_bottom }}px;
+  }
+
+  #ProductCarousel-{{ section.id }} {
+    --title-font-family: {{ section.settings.title_font.family | json }};
+    --title-font-weight: {{ section.settings.title_font.weight }};
+    --title-font-style: {{ section.settings.title_font.style }};
+    --title-font-size: {{ section.settings.title_size }}px;
+    --title-color: {{ section.settings.title_color }};
+    
+    --product-title-font-family: {{ section.settings.product_title_font.family | json }};
+    --product-title-font-size: {{ section.settings.product_title_size }}px;
+    --product-title-color: {{ section.settings.product_title_color }};
+    
+    --text-font-family: {{ section.settings.text_font.family | json }};
+    --text-font-size: {{ section.settings.text_size }}px;
+    --text-color: {{ section.settings.text_color }};
+    
+    --background-color: {{ section.settings.background_color }};
+    --flyout-background: {{ section.settings.flyout_background }};
+    --flyout-opacity: {{ section.settings.flyout_opacity | divided_by: 100.0 }};
+    
+    --grid-desktop-horizontal-spacing: {{ section.settings.grid_gap }}px;
+    --grid-mobile-horizontal-spacing: {{ section.settings.grid_gap_mobile }}px;
+    --image-aspect-ratio: {{ section.settings.image_ratio }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .product-carousel {
+    font-family: {{ text_font }};
+    color: {{ text_color }};
+    background-color: {{ background_color }};
+  }
+
+  .product-carousel {
+    padding: {{ section.settings.padding_size }}px;
+    margin: {{ section.settings.margin_size }}px;
+    border: {{ section.settings.border_size }}px solid {{ section.settings.border_color }};
+    box-shadow: {{ section.settings.shadow_x_offset }}px {{ section.settings.shadow_y_offset }}px {{ section.settings.shadow_blur }}px {{ section.settings.shadow_spread }}px {{ section.settings.shadow_color }};
+  }
+{%- endstyle -%}
+
+<div class="custom-product-carousel color-{{ section.settings.color_scheme }} gradient{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" id="ProductCarousel-{{ section.id }}">
+  <div class="page-width section-{{ section.id }}-padding">
+    {%- if section.settings.title != blank -%}
+      <h2 class="carousel-title text-{{ text_alignment }}"
+        style="
+          font-family: var(--title-font-family);
+          font-weight: var(--title-font-weight);
+          font-style: var(--title-font-style);
+          font-size: var(--title-font-size);
+          color: var(--title-color);
+        "
+      >
+        {{ section.settings.title }}
+      </h2>
+    {%- endif -%}
+
+    <div class="product-carousel-wrapper">
+      <slider-component class="slider-mobile-gutter">
+        <ul class="product-carousel-container grid grid--{{ columns_desktop }}-col-desktop grid--{{ columns_mobile }}-col-mobile"
+          id="Slider-{{ section.id }}"
+          role="list"
+        >
+          {%- for block in section.blocks -%}
+            <li class="product-card-wrapper grid__item" {{ block.shopify_attributes }}>
+              {%- if block.settings.product != blank -%}
+                {% render 'product-card',
+                  product: block.settings.product,
+                  show_secondary_image: show_secondary_image,
+                  show_vendor: show_vendor,
+                  show_rating: section.settings.show_rating,
+                  enable_quick_view: enable_quick_view,
+                  media_aspect_ratio: image_ratio,
+                  show_quick_add: section.settings.enable_quick_add,
+                  section_id: section.id,
+                  lazy_load: true
+                %}
+
+                {%- if show_flyout -%}
+                  <div class="product-flyout" data-flyout>
+                    <div class="flyout-content">
+                      {%- if block.settings.flyout_image != blank -%}
+                        <div class="flyout-image-wrapper">
+                          {{ block.settings.flyout_image | image_url: width: 400 | image_tag:
+                            loading: 'lazy',
+                            class: 'flyout-image',
+                            sizes: '(min-width: 990px) 400px, (min-width: 750px) 300px, 250px',
+                            widths: '250, 300, 400'
+                          }}
+                        </div>
+                      {%- endif -%}
+
+                      <div class="flyout-text-content">
+                        {%- if block.settings.flyout_heading != blank -%}
+                          <h3 class="flyout-heading">{{ block.settings.flyout_heading }}</h3>
+                        {%- endif -%}
+                        
+                        {%- if block.settings.flyout_text != blank -%}
+                          <div class="flyout-text rte">{{ block.settings.flyout_text }}</div>
+                        {%- endif -%}
+
+                        {%- if block.settings.show_specs -%}
+                          <div class="product-specs">
+                            {{ block.settings.specs_content }}
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </slider-component>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Carousel",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Featured Products"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Title Font",
+      "default": "helvetica_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Size",
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "show_flyout",
+      "label": "Show Flyout Box",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "desktop_columns",
+      "label": "Products per row (Desktop)",
+      "options": [
+        {
+          "value": "3",
+          "label": "3 products"
+        },
+        {
+          "value": "4",
+          "label": "4 products"
+        }
+      ],
+      "default": "4"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "custom_tagline",
+          "label": "Custom Tagline"
+        },
+        {
+          "type": "image_picker",
+          "id": "cam_image",
+          "label": "Cam Image"
+        },
+        {
+          "type": "richtext",
+          "id": "specs_content",
+          "label": "Specifications Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Carousel",
+      "blocks": [
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %} 

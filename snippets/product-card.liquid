@@ -1,0 +1,28 @@
+<div class="product-card" {{ block.shopify_attributes }}>
+  <div class="card-image-wrapper">
+    {%- if product.featured_media -%}
+      {{ product.featured_media | image_url: width: 533 | image_tag:
+        loading: 'lazy',
+        width: 533,
+        height: 533,
+        class: 'product-card-image',
+        sizes: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 50vw'
+      }}
+    {%- endif -%}
+  </div>
+
+  <div class="card-content">
+    {%- if show_vendor and product.vendor -%}
+      <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+      <div class="caption-with-letter-spacing light">{{ product.vendor }}</div>
+    {%- endif -%}
+
+    <span class="card-information">
+      <span class="card-information__text h5">
+        {{ product.title | escape }}
+      </span>
+
+      {% render 'price', product: product, show_compare_at_price: true %}
+    </span>
+  </div>
+</div> 

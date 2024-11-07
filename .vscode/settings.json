@@ -1,15 +1,319 @@
 {
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
+  },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
+{
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
+  },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
   "editor.formatOnSave": false,
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
+  },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
   "[javascript]": {
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
+  },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
     "editor.formatOnSave": true,
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
+  },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
   },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
+  },
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
+  },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
   "[css]": {
-    "editor.formatOnSave": true
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
   },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
+    "editor.formatOnSave": true
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
+  },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
+  },
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
+  },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
   "[liquid]": {
-    "editor.defaultFormatter": "Shopify.theme-check-vscode",
-    "editor.formatOnSave": true
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
   },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
+    "editor.defaultFormatter": "Shopify.theme-check-vscode",
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
+  },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
+    "editor.formatOnSave": true
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
+  },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
+  },
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
+  },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
   "themeCheck.checkOnSave": true
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
+  },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
+}
+}
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.liquid": "html"
+  },
+  "shopifyLiquidPreview.previewOnSave": true,
+  "shopifyLiquidPreview.port": 8080,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "shopify.themeCheck.enable": true,
+  "shopify.themeCheck.checkOnSave": true
 }
